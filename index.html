@@ -3,455 +3,538 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Maniswaroop M — Lead AI & MLOps Engineer</title>
-<meta name="description" content="Portfolio of Maniswaroop M — Lead AI/MLOps Engineer with 8 years of experience building and deploying scalable, enterprise-grade production AI and LLM architectures." />
+<title>ManiSwaroop M — Lead AI & MLOps Engineer</title>
+<meta name="description" content="Portfolio of ManiSwaroop M — Lead AI/MLOps Engineer with 8 years of experience building and deploying scalable, enterprise-grade production AI and LLM architectures." />
+
+<!-- Premium Typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
 <style>
   :root {
-    --ink:        #080b11;
-    --ink-2:      #0f1422;
-    --panel:      #141b2d;
-    --line:       #222d46;
-    --text:       #f1f5f9;
-    --muted:      #94a3b8;
-    --faint:      #475569;
-    --accent:     #2dd4bf;   /* vibrant neon teal */
-    --accent-2:   #fb923c;   /* crisp neon amber */
-    --accent-dim: rgba(45, 212, 191, 0.1);
-    --radius:     12px;
-    --maxw:       1140px;
+    /* Cyber-Glow Premium Dark Scheme */
+    --bg-dark:      #030712;
+    --bg-surface:   rgba(17, 24, 39, 0.7);
+    --bg-card:      rgba(31, 41, 55, 0.4);
+    --border-glow:  rgba(99, 102, 241, 0.15);
+    
+    /* Neon Hyper-Gradients */
+    --primary:      #6366f1;   /* Electric Indigo */
+    --secondary:    #a855f7;   /* Cyber Purple */
+    --accent:       #06b6d4;   /* Neon Cyan */
+    
+    /* Typography Colors */
+    --text-primary: #f9fafb;
+    --text-muted:   #9ca3af;
+    --text-dim:     #6b7280;
+    
+    --radius-lg:    24px;
+    --radius-md:    16px;
+    --maxw:         1200px;
+    --transition:   all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: var(--bg-dark); }
+  
   body {
-    margin: 0;
-    background: var(--ink);
-    color: var(--text);
-    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
-  /* Matrix-style ambient engineering node backdrop */
-  body::before {
-    content: "";
+  /* Deep Space Mesh Background Effect */
+  .space-bg {
     position: fixed;
     inset: 0;
-    background-image:
-      radial-gradient(circle at 1px 1px, rgba(45, 212, 191, 0.05) 1px, transparent 0);
-    background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(6, 116, 212, 0.04) 0%, transparent 60%);
+  }
+  .space-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.005) 1px, transparent 0), linear-gradient(90deg, rgba(255,255,255,0.005) 1px, transparent 0);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
   }
 
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
-  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+  a { color: inherit; text-decoration: none; transition: var(--transition); }
+
+  /* Gradient Text Utility */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--text-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cyber-gradient {
+    background: linear-gradient(90deg, var(--primary), var(--secondary) 50%, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   .mono {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.76rem;
-    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
+    display: inline-block;
   }
 
-  /* ---------- NAV ---------- */
+  /* ---------- GLASS NAV ---------- */
   header.nav {
-    position: sticky; top: 0; z-index: 100;
-    backdrop-filter: blur(12px);
-    background: rgba(8, 11, 17, 0.75);
-    border-bottom: 1px solid var(--line);
+    position: sticky; top: 20px; z-index: 100;
+    margin-bottom: -20px;
   }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-  .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; }
-  .brand span { color: var(--accent); }
+  .nav-blur {
+    background: rgba(3, 7, 18, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 32px;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7);
+  }
+  .brand { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.03em; }
+  .brand span { font-weight: 400; color: var(--text-muted); }
   .nav-links { display: flex; gap: 32px; }
-  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color .2s; }
-  .nav-links a:hover { color: var(--accent); }
-  @media (max-width: 768px) { .nav-links { display: none; } }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); position: relative; }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-links a::after {
+    content: ""; position: absolute; bottom: -4px; left: 50%; width: 0; height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: var(--transition); transform: translateX(-50%);
+  }
+  .nav-links a:hover::after { width: 100%; }
+  @media (max-width: 868px) { .nav-links { display: none; } }
 
-  /* ---------- HERO ---------- */
-  .hero { padding: 110px 0 80px; }
-  .status {
+  /* ---------- HYPER HERO ---------- */
+  .hero { padding: 160px 0 100px; text-align: center; }
+  .status-pill {
     display: inline-flex; align-items: center; gap: 10px;
-    padding: 6px 16px; border: 1px solid var(--line);
-    border-radius: 999px; background: var(--ink-2);
-    margin-bottom: 32px;
+    padding: 8px 20px; border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 100px; background: rgba(255,255,255,0.02);
+    margin-bottom: 32px; backdrop-filter: blur(5px);
   }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
-    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.6); animation: pulse 2s infinite; }
-  @keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.55); }
-    70%  { box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+  .pulse-node { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); position: relative; }
+  .pulse-node::after {
+    content: ""; position: absolute; inset: -4px; border-radius: 50%; 
+    background: var(--accent); opacity: 0.4; animation: ripple 2s infinite;
   }
-  .status span { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+  @keyframes ripple { 0% { transform: scale(1); opacity: 0.4; } 100% { transform: scale(3); opacity: 0; } }
+  .status-pill span { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.02em; }
 
-  h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4.2rem);
-    line-height: 1.05;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin: 0 0 24px;
+  h1.hero-title {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 28px;
   }
-  h1 .accent { color: var(--accent); }
-  .lede { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--muted); max-width: 780px; margin: 0 0 40px; line-height: 1.6; }
-  .lede strong { color: var(--text); font-weight: 600; }
+  .hero .lede { font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--text-muted); max-width: 800px; margin: 0 auto 48px; font-weight: 400; }
+  .hero .lede strong { color: var(--text-primary); font-weight: 600; }
 
-  .cta-row { display: flex; flex-wrap: wrap; gap: 16px; }
+  .cta-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
   .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 14px 26px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
-    transition: transform .15s ease, background .2s, border-color .2s;
-    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 36px; border-radius: 100px; font-weight: 600; font-size: 0.95rem;
+    cursor: pointer; position: relative; overflow: hidden;
   }
-  .btn:hover { transform: translateY(-2px); }
-  .btn-primary { background: var(--accent); color: #042521; }
-  .btn-primary:hover { background: #5eead4; }
-  .btn-ghost { border: 1px solid var(--line); color: var(--text); background: var(--ink-2); }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-gradient {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.4);
+  }
+  .btn-gradient:hover {
+    box-shadow: 0 20px 40px -5px rgba(99, 102, 241, 0.6);
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent);
+    background: rgba(6, 182, 212, 0.05);
+    transform: translateY(-2px);
+  }
 
-  /* ---------- SECTION SHELL ---------- */
-  section { padding: 80px 0; border-bottom: 1px solid rgba(34, 45, 70, 0.4); }
-  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px; }
-  .sec-head .idx { font-family: 'JetBrains Mono', monospace; color: var(--faint); font-size: 0.9rem; }
-  h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-
-  /* ---------- ABOUT ---------- */
-  .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 54px; align-items: start; }
-  @media (max-width: 868px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
-  .about p { color: var(--muted); font-size: 1.08rem; margin: 0 0 20px; }
-  .about p strong { color: var(--text); font-weight: 600; }
-  .spec-card {
-    border: 1px solid var(--line); border-radius: var(--radius);
-    background: linear-gradient(180deg, var(--panel), var(--ink-2));
-    padding: 28px;
-    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+  /* ---------- MODERN SECTIONS ---------- */
+  section { padding: 100px 0; position: relative; }
+  .sec-container {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-lg);
+    padding: 60px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 40px 80px -30px rgba(0,0,0,0.8);
   }
-  .spec-card h3 { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--accent); margin: 0 0 20px; }
-  .spec-row { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
-  .spec-row:last-child { border-bottom: none; }
-  .spec-row .k { color: var(--faint); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; }
-  .spec-row .v { color: var(--text); text-align: right; font-weight: 500; }
-
-  /* ---------- SKILLS ---------- */
-  .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (max-width: 768px) { .skill-grid { grid-template-columns: 1fr; } }
-  .skill-block {
-    border: 1px solid var(--line); border-radius: var(--radius);
-    background: var(--ink-2); padding: 28px;
-    transition: border-color .25s, transform .25s, box-shadow .25s;
-  }
-  .skill-block:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 24px -12px var(--accent-dim); }
-  .skill-block h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; margin: 0 0 20px; font-weight: 600; }
-  .skill-block .lbl { color: var(--accent-2); margin-right: 6px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.76rem;
-    padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px;
-    color: var(--muted); background: var(--ink);
-    transition: border-color .2s;
-  }
-  .skill-block:hover .tag { border-color: rgba(45, 212, 191, 0.2); color: var(--text); }
-
-  /* ---------- EXPERIENCE ---------- */
-  .timeline { border-left: 2px solid var(--line); margin-left: 8px; }
-  .job { position: relative; padding: 0 0 48px 36px; }
-  .job::before {
-    content: ""; position: absolute; left: -7px; top: 6px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: var(--ink); border: 2px solid var(--accent);
-  }
-  .job:last-child { padding-bottom: 0; }
-  .job .when { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-2); font-weight: 500; }
-  .job h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; margin: 8px 0 4px; font-weight: 700; }
-  .job .co { color: var(--accent); font-size: 1rem; font-weight: 600; margin-bottom: 16px; display: inline-block; }
+  @media (max-width: 768px) { .sec-container { padding: 32px 20px; } }
   
-  .job-bullets { margin: 0; padding-left: 20px; color: var(--muted); font-size: 1rem; }
-  .job-bullets li { margin-bottom: 12px; line-height: 1.55; }
-  .job-bullets strong { color: var(--text); font-weight: 500; }
+  .sec-header { margin-bottom: 48px; }
+  h2.sec-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; }
 
-  /* ---------- PROJECTS ---------- */
-  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (max-width: 900px) { .proj-grid { grid-template-columns: 1fr; } }
-  .proj {
-    border: 1px solid var(--line); border-radius: var(--radius);
-    background: linear-gradient(180deg, var(--panel), var(--ink-2));
-    padding: 32px; transition: transform .25s, border-color .25s, box-shadow .25s;
-    display: flex; flex-direction: column; justify-content: space-between;
+  /* ---------- GRID ARCHITECTURES ---------- */
+  .about-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start; }
+  @media (max-width: 968px) { .about-layout { grid-template-columns: 1fr; gap: 40px; } }
+  .about-p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 24px; font-weight: 400; }
+  .about-p strong { color: var(--text-primary); font-weight: 600; }
+  
+  .glass-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    position: relative; overflow: hidden;
   }
-  .proj:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 12px 32px -16px rgba(45, 212, 191, 0.15); }
-  .proj .pmono { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--accent-2); letter-spacing: 0.05em; font-weight: 500; }
-  .proj h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin: 12px 0 12px; font-weight: 600; }
-  .proj p { color: var(--muted); font-size: 0.98rem; margin: 0 0 24px; line-height: 1.6; }
-  .proj p strong { color: var(--text); font-weight: 500; }
-  .proj .ptags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+  .glass-card::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent);
+    pointer-events: none;
+  }
+  
+  .spec-row { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-dim); }
+  .spec-val { font-weight: 600; color: var(--text-primary); }
 
-  /* ---------- CONTACT ---------- */
-  .contact { text-align: center; padding: 100px 0; border-bottom: none; }
-  .contact h2 { margin-bottom: 18px; }
-  .contact p { color: var(--muted); max-width: 540px; margin: 0 auto 36px; font-size: 1.1rem; }
+  /* SKILL MESH */
+  .skills-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 768px) { .skills-container { grid-template-columns: 1fr; } }
+  .skill-group-card { transition: var(--transition); }
+  .skill-group-card:hover { border-color: rgba(168, 85, 247, 0.3); transform: translateY(-4px); }
+  .skill-group-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .skill-group-card h3::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--secondary); }
+  
+  .tags-flex { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    padding: 8px 16px; border: 1px solid rgba(255,255,255,0.04); border-radius: 100px;
+    color: var(--text-muted); background: rgba(255,255,255,0.02);
+    transition: var(--transition);
+  }
+  .skill-group-card:hover .chip { border-color: rgba(255,255,255,0.1); color: var(--text-primary); background: rgba(255,255,255,0.05); }
 
-  footer { border-top: 1px solid var(--line); padding: 32px 0; background: #05070b; }
-  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  .foot-inner span { color: var(--faint); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
-  .foot-links { display: flex; gap: 24px; }
-  .foot-links a { color: var(--muted); font-size: 0.88rem; transition: color .2s; }
-  .foot-links a:hover { color: var(--accent); }
+  /* TIMELINE DYNAMICS */
+  .timeline-track { position: relative; padding-left: 40px; }
+  .timeline-track::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(var(--primary), var(--secondary), transparent); }
+  
+  .timeline-node { position: relative; padding-bottom: 56px; }
+  .timeline-node:last-child { padding-bottom: 0; }
+  .timeline-dot { position: absolute; left: -46px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-dark); border: 3px solid var(--primary); box-shadow: 0 0 15px var(--primary); }
+  
+  .time-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--secondary); font-weight: 500; margin-bottom: 6px; }
+  .timeline-node h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
+  .timeline-node .company-tag { color: transparent; background: linear-gradient(90deg, var(--accent), var(--primary)); -webkit-background-clip: text; font-weight: 700; font-size: 1.05rem; display: inline-block; margin-bottom: 18px; }
+  
+  .bullet-list { list-style: none; }
+  .bullet-list li { position: relative; padding-left: 24px; color: var(--text-muted); margin-bottom: 12px; font-size: 1.02rem; }
+  .bullet-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .bullet-list li strong { color: var(--text-primary); font-weight: 500; }
 
-  /* Scroll Reveal animation configuration */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(0.16, 1, 0.3, 1), transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal.in { opacity: 1; transform: none; }
+  /* SHOWCASE WORK */
+  .showcase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  @media (max-width: 900px) { .showcase-grid { grid-template-columns: 1fr; } }
+  .work-card {
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: var(--transition); border: 1px solid rgba(255,255,255,0.04);
+  }
+  .work-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 30px 60px -20px rgba(6, 182, 212, 0.15);
+  }
+  .card-top h4 { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--secondary); margin-bottom: 12px; }
+  .work-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.01em; }
+  .work-card p { color: var(--text-muted); font-size: 0.98rem; margin-bottom: 32px; }
+  .work-card p strong { color: var(--text-primary); }
+
+  /* CONTACT BLOCKS */
+  .contact-box { text-align: center; padding: 40px 0; }
+  .contact-box p { color: var(--text-muted); max-width: 580px; margin: 0 auto 40px; font-size: 1.2rem; }
+
+  /* PREMIUM FOOTER */
+  footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 40px 0; background: #02050c; position: relative; z-index: 2; }
+  .footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-flex span { color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+  .footer-links a:hover { color: var(--accent); }
+
+  /* Scroll Animations */
+  .reveal-node { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal-node.visible { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; scroll-behavior: auto; }
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .btn:hover, .skill-block:hover, .proj:hover { transform: none; }
+    * { animation: none !important; scroll-behavior: auto !important; }
+    .reveal-node { opacity: 1; transform: none; transition: none; }
+    .btn:hover, .work-card:hover, .skill-group-card:hover { transform: none; }
   }
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#top">Mani<span>swaroop M</span></a>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Featured Work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<div class="space-bg"></div>
+
+<!-- NAVIGATION INTERFACE -->
+<div class="wrap">
+  <header class="nav">
+    <div class="nav-blur">
+      <a class="brand" href="#top">Mani<span class="cyber-gradient">Swaroop M</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Capabilities</a>
+        <a href="#experience">Timeline</a>
+        <a href="#work">Showcase</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+</div>
 
 <main id="top">
 
-  <!-- HERO SECTION -->
+  <!-- HYPER HERO BANNER -->
   <section class="hero">
     <div class="wrap">
-      <div class="status">
-        <span class="dot"></span>
+      <div class="status-pill">
+        <span class="pulse-node"></span>
         <span>Open to Senior Engineering Opportunities &bull; Bengaluru</span>
       </div>
-      <p class="mono">Lead AI / MLOps / GenAI Engineer</p>
-      <h1>I architect & scale <span class="accent">production GenAI</span> and MLOps platforms.</h1>
+      <h1 class="hero-title gradient-text">
+        Architecting & Scaling <br><span class="cyber-gradient">Production GenAI</span> Platforms
+      </h1>
       <p class="lede">
-        I am <strong>Maniswaroop M</strong>[cite: 2]. I specialize in taking Artificial Intelligence from localized notebooks to highly reliable, distributed cloud infrastructures[cite: 2]. My focus is heavily fixed on enterprise <strong>LLM applications</strong>, multi-agent workflows, microservices backends, and robust high-throughput scaling pipelines[cite: 2].
+        I am <strong>ManiSwaroop M</strong>. I orchestrate Artificial Intelligence out of sandboxed environments into highly reliable, distributed cloud infrastructures, engineering high-throughput <strong>LLM runtimes</strong>, autonomous multi-agent graphs, and elite MLOps data planes.
       </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:mail2swaroop242@gmail.com">Initiate Contact</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/maniswaroop-m" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="https://github.com/DataScienceAlpath" target="_blank" rel="noopener">GitHub</a>
+      <div class="cta-group">
+        <a class="btn btn-gradient" href="mailto:mail2swaroop242@gmail.com">Initiate Engine</a>
+        <a class="btn btn-outline" href="https://linkedin.com/in/maniswaroop-m" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-outline" href="https://github.com/DataScienceAIpath" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- SUMMARY ARCHITECTURE -->
   <section id="about">
     <div class="wrap">
-      <div class="sec-head"><span class="idx">01</span><h2>Executive Summary</h2></div>
-      <div class="about-grid reveal">
-        <div class="about">
-          <p>
-            With approximately <strong>8 years of professional expertise</strong> intersecting core Data Science, Advanced Deep Learning, and end-to-end Machine Learning systems, I design robust infrastructures across GCP, AWS, and IBM Cloud platforms[cite: 2].
-          </p>
-          <p>
-            My engineering focuses heavily on modern <strong>Generative AI ecosystem management</strong>: optimizing state-of-the-art Large Language Models (LLMs), compiling hybrid vector search data planes, configuring custom fine-tuning mechanics, and standardizing multi-agent networks using secure code and active governance layers[cite: 2].
-          </p>
-          <p>
-            I care deeply about the complex, underlying plumbing that handles real-world workloads—observability frameworks, custom telemetry tracing, compute minimization, and rigorous CI/CD automation—transforming proofs of concept into high-availability systems[cite: 2].
-          </p>
+      <div class="sec-container reveal-node">
+        <div class="sec-header">
+          <p class="mono">// 01 . Executive Profile</p>
+          <h2 class="sec-title gradient-text">Core Competency</h2>
         </div>
-        <aside class="spec-card">
-          <h3>// engineer.spec</h3>
-          <div class="spec-row"><span class="k">tenure</span><span class="v">~8 Years</span></div>
-          <div class="spec-row"><span class="k">location</span><span class="v">Bengaluru, India</span></div>
-          <div class="spec-row"><span class="k">core_focus</span><span class="v">GenAI &bull; LLMOps &bull; MLOps</span></div>
-          <div class="spec-row"><span class="k">backend_pref</span><span class="v">FastAPI / Python (Expert)</span></div>
-          <div class="spec-row"><span class="k">availability</span><span class="v" style="color:var(--accent)">Active / Immediate</span></div>
-        </aside>
+        <div class="about-layout">
+          <div class="about-main">
+            <p class="about-p">
+              With over <strong>8 years of professional depth</strong> bridging localized Data Science modules, Advanced Deep Learning engines, and comprehensive production Machine Learning lifecycles, I scale massive architectures across enterprise clouds.
+            </p>
+            <p class="about-p">
+              My core operational framework centers on modern <strong>Generative AI platform ecosystems</strong>: optimization workflows for foundational models, distributed hybrid vector routing grids, automated fine-tuning, and governed agentic orchestration networks.
+            </p>
+            <p class="about-p">
+              I specialize in the foundational plumbing backing real-world enterprise applications—from sub-millisecond telemetry tracing and real-time inference observability matrices to cloud infrastructure automation pipelines.
+            </p>
+          </div>
+          <aside class="glass-card">
+            <p class="mono" style="margin-bottom: 16px; color: var(--secondary);">// telemetry.specs</p>
+            <div class="spec-row"><span class="spec-label">tenure</span><span class="spec-val">~8 Years</span></div>
+            <div class="spec-row"><span class="spec-label">location</span><span class="spec-val">Bengaluru, IN</span></div>
+            <div class="spec-row"><span class="spec-label">focus_domain</span><span class="spec-val">GenAI &bull; LLMOps</span></div>
+            <div class="spec-row"><span class="spec-label">backend_stack</span><span class="spec-val">FastAPI &bull; Python</span></div>
+            <div class="spec-row"><span class="spec-label">status</span><span class="spec-val" style="color:var(--accent)">Active Horizon</span></div>
+          </aside>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
+  <!-- TECHNICAL CAPABILITIES -->
   <section id="skills">
     <div class="wrap">
-      <div class="sec-head"><span class="idx">02</span><h2>Technical Capabilities</h2></div>
-      <div class="skill-grid">
-        <div class="skill-block reveal">
-          <h3><span class="lbl">&rsaquo;</span> GenAI & LLM Architecture</h3>
-          <div class="tags">
-            <span class="tag">Prompt Engineering</span><span class="tag">Structured Outputs</span><span class="tag">RAG Pipelines</span><span class="tag">Multi-Agent Autonomy</span><span class="tag">Semantic/Hybrid Search</span><span class="tag">Fine-Tuning (LoRA/QLoRA/PEFT)</span><span class="tag">Guardrails & Safety Policies</span>
-          </div>
+      <div class="sec-container reveal-node">
+        <div class="sec-header">
+          <p class="mono">// 02 . Operational Frameworks</p>
+          <h2 class="sec-title gradient-text">Technical Arsenal</h2>
         </div>
-        <div class="skill-block reveal">
-          <h3><span class="lbl">&rsaquo;</span> Frameworks & Foundational Profiles</h3>
-          <div class="tags">
-            <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">LlamaIndex</span><span class="tag">Haystack</span><span class="tag">AutoGen</span><span class="tag">CrewAI</span><span class="tag">Hugging Face Transformers</span><span class="tag">GPT-OSS-120B</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">DeepSeek</span><span class="tag">Granite v3/v4</span>
+        <div class="skills-container">
+          <div class="glass-card skill-group-card">
+            <h3>GenAI & LLM Architecture</h3>
+            <div class="tags-flex">
+              <span class="chip">Prompt Engineering</span><span class="chip">Structured Outputs</span><span class="chip">RAG Pipelines</span><span class="chip">Multi-Agent Autonomy</span><span class="chip">Semantic/Hybrid Search</span><span class="chip">Fine-Tuning (LoRA/QLoRA)</span><span class="chip">Guardrails & Safety Policies</span>
+            </div>
           </div>
-        </div>
-        <div class="skill-block reveal">
-          <h3><span class="lbl">&rsaquo;</span> MLOps, LLMOps & Serving Engines</h3>
-          <div class="tags">
-            <span class="tag">vLLM</span><span class="tag">TGI</span><span class="tag">Ollama</span><span class="tag">Triton</span><span class="tag">Docker</span><span class="tag">Kubernetes Clusters</span><span class="tag">Kubeflow</span><span class="tag">GitLab CI/CD</span><span class="tag">Apache Airflow</span><span class="tag">Prometheus & Grafana</span><span class="tag">SonarQube</span>
+          <div class="glass-card skill-group-card">
+            <h3>Ecosystems & Foundations</h3>
+            <div class="tags-flex">
+              <span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">LlamaIndex</span><span class="chip">Haystack</span><span class="chip">AutoGen</span><span class="chip">CrewAI</span><span class="chip">Transformers</span><span class="chip">GPT-OSS-120B</span><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">DeepSeek</span><span class="chip">Granite v3/v4</span>
+            </div>
           </div>
-        </div>
-        <div class="skill-block reveal">
-          <h3><span class="lbl">&rsaquo;</span> Backend Engineering & Systems Data</h3>
-          <div class="tags">
-            <span class="tag">Python (Expert)</span><span class="tag">FastAPI (Expert)</span><span class="tag">Django / Flask</span><span class="tag">Streaming APIs</span><span class="tag">Milvus</span><span class="tag">Qdrant</span><span class="tag">Pinecone</span><span class="tag">FAISS</span><span class="tag">Chroma</span><span class="tag">Neo4j (Graph DB)</span><span class="tag">BigQuery</span><span class="tag">PostgreSQL</span>
+          <div class="glass-card skill-group-card">
+            <h3>LLMOps & Serving Infrastructures</h3>
+            <div class="tags-flex">
+              <span class="chip">vLLM</span><span class="chip">TGI</span><span class="chip">Ollama</span><span class="chip">Triton</span><span class="chip">Docker Containers</span><span class="chip">Kubernetes Clusters</span><span class="chip">Kubeflow</span><span class="chip">GitLab CI/CD</span><span class="chip">Apache Airflow</span><span class="chip">Prometheus</span><span class="chip">Grafana</span>
+            </div>
+          </div>
+          <div class="glass-card skill-group-card">
+            <h3>Backend Data Engineering</h3>
+            <div class="tags-flex">
+              <span class="chip">Python (Expert)</span><span class="chip">FastAPI (Expert)</span><span class="chip">Streaming APIs</span><span class="chip">Milvus</span><span class="chip">Qdrant</span><span class="chip">Pinecone</span><span class="chip">FAISS</span><span class="chip">Neo4j (Graph)</span><span class="chip">BigQuery</span><span class="chip">PostgreSQL</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE SECTION -->
+  <!-- INDUSTRIAL TIMELINE -->
   <section id="experience">
     <div class="wrap">
-      <div class="sec-head"><span class="idx">03</span><h2>Professional Timeline</h2></div>
-      <div class="timeline reveal">
-        
-        <div class="job">
-          <div class="when">Jun 2024 — Present</div>
-          <h3>Lead AI / MLOps Engineer</h3>
-          <div class="co">IBM</div>
-          <ul class="job-bullets">
-            <li><strong>Distributed LLM Architecture:</strong> Designing and running scalable, intent-driven LLM applications on multi-cloud environments using proprietary and open-source foundation sets (GPT-OSS-120B, Granite v3/v4, LLaMA, DeepSeek)[cite: 2].</li>
-            <li><strong>Agentic Frameworks:</strong> Engineered custom <strong>Model Context Protocol (MCP)</strong> servers and tools connecting LLMs to enterprise software[cite: 2]. Constructed a production multi-agent incident framework via LangGraph using PostgreSQL checkpointing for persistent long-term memory[cite: 2].</li>
-            <li><strong>High-Throughput Optimization:</strong> Orchestrated model specialized variants using LoRA/QLoRA adapters and optimized production runtimes inside Kubernetes compute clusters using <strong>vLLM, TGI, and Ollama</strong> for enhanced GPU maximization[cite: 2].</li>
-            <li><strong>Production Governance & Security:</strong> Built automated LLM-as-a-Judge evaluation nodes alongside strict prompt moderation guardrails[cite: 2]. Managed automated GitLab CI/CD workflows, containerization with Docker/Kubeflow, and unified cluster tracing inside Grafana[cite: 2].</li>
-          </ul>
+      <div class="sec-container reveal-node">
+        <div class="sec-header">
+          <p class="mono">// 03 . Production Milestones</p>
+          <h2 class="sec-title gradient-text">Professional Experience</h2>
         </div>
+        <div class="timeline-track">
+          
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
+            <p class="time-meta">Jun 2024 — Present</p>
+            <h3>Lead AI / MLOps Engineer</h3>
+            <span class="company-tag">IBM</span>
+            <ul class="bullet-list">
+              <li><strong>Distributed LLM Architecture:</strong> Processing scaled foundation clusters on hybrid environments with both commercial configurations and advanced open variants (Granite v3/v4, DeepSeek, GPT-OSS-120B).</li>
+              <li><strong>Agentic Frameworks:</strong> Built targeted **Model Context Protocol (MCP)** server logic for enterprise platform integrations. Constructed production-level multi-agent routing graphs with LangGraph, managing long-term memory via PostgreSQL checkpoint loops.</li>
+              <li><strong>Runtime Scaling & Efficiency:</strong> Streamlined inference runtimes inside Kubernetes environments via **vLLM, TGI, and Ollama orchestration**, minimizing compute allocations and optimizing GPU node densities.</li>
+              <li><strong>Production Security Overlays:</strong> Standardized continuous LLM-as-a-Judge evaluations alongside real-time prompt guardrails. Integrated automated GitLab CI/CD pipelines, containerization clusters, and cross-functional Grafana telemetry tracing dashboards.</li>
+            </ul>
+          </div>
 
-        <div class="job">
-          <div class="when">Sep 2022 — Jun 2024</div>
-          <h3>MLOps Engineer</h3>
-          <div class="co">Fractal Analytics</div>
-          <ul class="job-bullets">
-            <li>Assembled automated big-data workflows using Apache Airflow DAGs and GCP Vertex AI[cite: 2].</li>
-            <li>Engineered custom churn, telemetry, and forecasting platforms with deep pipeline observability[cite: 2].</li>
-            <li>Applied transformer architectures (BERT, DeBERTa, RoBERTa) to calculate highly performant semantic similarities over large-scale customer records[cite: 2].</li>
-          </ul>
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
+            <p class="time-meta">Sep 2022 — Jun 2024</p>
+            <h3>MLOps Engineer</h3>
+            <span class="company-tag">Fractal Analytics</span>
+            <ul class="bullet-list">
+              <li>Assembled resilient automated batch analytics pipelines using Apache Airflow configurations tied natively with GCP Vertex AI engines.</li>
+              <li>Engineered custom predictive systems and telemetry trackers supported by explicit deep-dive monitoring systems.</li>
+              <li>Utilized transformer models (BERT, RoBERTa series) to perform dense text tokenizations and high-throughput semantic mappings over corporate assets.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
+            <p class="time-meta">May 2021 — Sep 2022</p>
+            <h3>Machine Learning Engineer</h3>
+            <span class="company-tag">Quantiphi Analytics</span>
+            <ul class="bullet-list">
+              <li>Managed scalable Kubeflow clustering frameworks across multi-tenant GCP platforms to handle heavy deep learning processing flows.</li>
+              <li>Designed entity relationship networks using Neo4j graph schemas to detect and minimize sophisticated institutional fraud rings.</li>
+              <li>Architected structural data engines capable of deploying millions of secure synthetic data profiles for localized engineering stress-testing.</li>
+            </ul>
+          </div>
+
         </div>
-
-        <div class="job">
-          <div class="when">May 2021 — Sep 2022</div>
-          <h3>Machine Learning Engineer</h3>
-          <div class="co">Quantiphi Analytics</div>
-          <ul class="job-bullets">
-            <li>Built automated Kubeflow orchestration clusters running across GCP AI environments and Visual Inspection planes[cite: 2].</li>
-            <li>Designed strict graph clustering modules using Neo4j to intercept structural financial fraud rings[cite: 2].</li>
-            <li>Generated millions of secure synthetic data profiles via complex data generation architectures[cite: 2].</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="when">Aug 2018 — Dec 2020</div>
-          <h3>Associate Consultant</h3>
-          <div class="co">Bristlecone</div>
-          <ul class="job-bullets">
-            <li>Designed industrial supply-chain and demand analytics engines utilizing Pandas, NumPy, and Scikit-Learn[cite: 2].</li>
-            <li>Maintained strict adherence to business service level agreements (SLAs) across critical data cycles[cite: 2].</li>
-          </ul>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS SECTION -->
+  <!-- PROJECT CASE STUDIES -->
   <section id="work">
     <div class="wrap">
-      <div class="sec-head"><span class="idx">04</span><h2>Selected Case Studies</h2></div>
-      <div class="proj-grid">
-        
-        <div class="proj reveal">
-          <div>
-            <span class="pmono">// System Architecture & Core Guardrails</span>
-            <h3>Agent Assist — LLM Safety & Compliance</h3>
-            <p>
-              Designed and deployed an enterprise compliance guardian analyzing user commands against vast catalogs of corporate documentation in near real-time[cite: 2]. Built on a streaming <strong>FastAPI backend</strong> utilizing a hybrid <strong>LangGraph + Graph DB</strong> structure to block unlawful transactions before calculation execution[cite: 2].
-            </p>
-          </div>
-          <div class="ptags tags">
-            <span class="tag">Granite v3</span><span class="tag">Mistral</span><span class="tag">Milvus</span><span class="tag">FAISS</span><span class="tag">FastAPI</span><span class="tag">Docker</span>
-          </div>
+      <div class="sec-container reveal-node">
+        <div class="sec-header">
+          <p class="mono">// 04 . Architectural Artifacts</p>
+          <h2 class="sec-title gradient-text">Featured Case Studies</h2>
         </div>
+        <div class="showcase-grid">
+          
+          <div class="glass-card work-card">
+            <div class="card-top">
+              <h4>SYSTEM SECURITY & CORE COMPLIANCE</h4>
+              <h3>Agent Assist — Real-Time Governance</h3>
+              <p>Designed and scaled an enterprise-wide real-time guardian validating inbound natural language calls against massive policy indices. Powered by an asynchronous streaming <strong>FastAPI backend</strong> utilizing a hybrid <strong>LangGraph + Graph DB</strong> architecture.</p>
+            </div>
+            <div class="tags-flex">
+              <span class="chip">Granite v3</span><span class="chip">Milvus</span><span class="chip">LangGraph</span><span class="chip">FastAPI</span>
+            </div>
+          </div>
 
-        <div class="proj reveal">
-          <div>
-            <span class="pmono">// Large Scale Document Intelligence</span>
-            <h3>Client Value Report — Automated Insights</h3>
-            <p>
-              Architected a distributed data intelligence platform gathering cross-functional bills, CRM activity, and PDFs into highly synthesized executive briefs[cite: 2]. Engineered an asynchronous ingestion system through <strong>LlamaIndex</strong>, using multi-model routing loops running over <strong>vLLM engines</strong>[cite: 2].
-            </p>
+          <div class="glass-card work-card">
+            <div class="card-top">
+              <h4>DOCUMENT INTELLIGENCE NETWORKS</h4>
+              <h3>Client Value Report — Ingestion Engine</h3>
+              <p>Architected an automated data intelligence framework that dynamically parsed multi-format invoices, operational logs, and PDFs into executive files. Configured intelligent routing using <strong>LlamaIndex</strong> running over <strong>vLLM clusters</strong>.</p>
+            </div>
+            <div class="tags-flex">
+              <span class="chip">GPT-OSS-120B</span><span class="chip">Qdrant</span><span class="chip">LlamaIndex</span><span class="chip">vLLM</span>
+            </div>
           </div>
-          <div class="ptags tags">
-            <span class="tag">GPT-OSS-120B</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Qdrant</span><span class="tag">vLLM</span><span class="tag">PostgreSQL</span>
+
+          <div class="glass-card work-card">
+            <div class="card-top">
+              <h4>FINANCIAL FORECASTING PLATFORMS</h4>
+              <h3>Cloud FinOps Budgetary Intelligence</h3>
+              <p>Constructed a distributed data pipeline aggregating cloud financial records into centralized BigQuery warehouses. Combined custom LSTM configurations with autonomous <strong>LangGraph RAG modules</strong> to detect microeconomic run-rate anomalies.</p>
+            </div>
+            <div class="tags-flex">
+              <span class="chip">LangGraph</span><span class="chip">BigQuery</span><span class="chip">LSTM</span><span class="chip">Grafana</span>
+            </div>
           </div>
+
+          <div class="glass-card work-card">
+            <div class="card-top">
+              <h4>RISK PROFILE EVALUATION</h4>
+              <h3>BFSI Underwriting Copilot</h3>
+              <p>Engineered an end-to-end banking underwriting support system utilizing advanced Computer Vision OCR nodes to process personal financial ledger sheets. Routed clear parameters into **XGBoost classification systems** embedded with SHAP interpretive data layers.</p>
+            </div>
+            <div class="tags-flex">
+              <span class="chip">Vertex AI</span><span class="chip">XGBoost</span><span class="chip">SHAP Data</span><span class="chip">OpenCV</span>
+            </div>
+          </div>
+
         </div>
-
-        <div class="proj reveal">
-          <div>
-            <span class="pmono">// Cloud Financial Infrastructure</span>
-            <h3>Cloud FinOps Cost Intelligence</h3>
-            <p>
-              Constructed a multi-cloud financial oversight engine streaming massive multi-cloud billing profiles into BigQuery[cite: 2]. Leveraged Prophet and LSTM algorithms to predict budgetary run rates paired with an autonomous <strong>LangGraph RAG troubleshooting agent</strong> to execute savings recommendations[cite: 2].
-            </p>
-          </div>
-          <div class="ptags tags">
-            <span class="tag">LangGraph</span><span class="tag">BigQuery</span><span class="tag">LSTM</span><span class="tag">Isolation Forest</span><span class="tag">Grafana</span>
-          </div>
-        </div>
-
-        <div class="proj reveal">
-          <div>
-            <span class="pmono">// Risk Assessment Modeling</span>
-            <h3>BFSI Credit Underwriting Copilot</h3>
-            <p>
-              Developed an LLM risk processor parsing complex banking statements via Computer Vision OCR[cite: 2]. Fed structured metrics into an advanced <strong>XGBoost underwriting classifier</strong> backed by SHAP localized explainability data points to guarantee regulatory transparency[cite: 2].
-            </p>
-          </div>
-          <div class="ptags tags">
-            <span class="tag">Vertex AI</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">OpenCV</span><span class="tag">LangGraph</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact">
-    <div class="wrap reveal">
-      <p class="mono">// let's scale together</p>
-      <h2>Connect to Build Production Systems.</h2>
-      <p>I am open to discussions regarding system development, technical advisory, or senior engineering roles.</p>
-      <div class="cta-row" style="justify-content:center;">
-        <a class="btn btn-primary" href="mailto:mail2swaroop242@gmail.com">mail2swaroop242@gmail.com</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/maniswaroop-m" target="_blank" rel="noopener">LinkedIn Profile</a>
+  <!-- CALL TO ACTION AREA -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-container reveal-node contact-box" style="background: radial-gradient(circle at 50% 50%, rgba(99,102,241,0.15), var(--bg-surface));">
+        <p class="mono" style="color: var(--accent);">// let's integrate pipelines</p>
+        <h2 class="sec-title gradient-text" style="margin-bottom: 20px;">Deploy Enterprise Scale Systems.</h2>
+        <p>I am available for tactical advisory sessions, production core design reviews, or comprehensive architectural consulting engagements.</p>
+        <div class="cta-group">
+          <a class="btn btn-gradient" href="mailto:mail2swaroop242@gmail.com">mail2swaroop242@gmail.com</a>
+          <a class="btn btn-outline" href="https://linkedin.com/in/maniswaroop-m" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
+<!-- HIGH TECH FOOTER UNIT -->
 <footer>
-  <div class="wrap foot-inner">
-    <span>&copy; <span id="yr"></span> Maniswaroop M &bull; Built for High-Performance Platforms</span>
-    <div class="foot-links">
+  <div class="wrap footer-flex">
+    <span>&copy; <span id="yr"></span> ManiSwaroop M &bull; Engineered for Advanced Scale</span>
+    <div class="footer-links">
       <a href="mailto:mail2swaroop242@gmail.com">Email</a>
       <a href="https://linkedin.com/in/maniswaroop-m" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/DataScienceAlpath" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/DataScienceAIpath" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
@@ -459,11 +542,11 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Low overhead custom viewport scroll observer
+  // Premium Viewport Reveal Engine
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal-node').forEach(el => io.observe(el));
 </script>
 
 </body>
